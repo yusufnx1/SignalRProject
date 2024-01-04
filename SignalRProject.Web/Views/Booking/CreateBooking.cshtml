@@ -1,0 +1,61 @@
+﻿@model CreateBookingDto
+@{
+    ViewData["Title"] = "CreateBooking";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Rezervazyon İşlemleri</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Yeni Rezervazyon Girişi</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Name">Adı Soyadı</label>
+                                <input type="text" class="form-control" asp-for="Name" id="Name">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Phone">Telefon Numarası</label>
+                                <input type="text" class="form-control" asp-for="Phone" id="Phone">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="mailAdress">Mail Adresi</label>
+                                <input type="mail" class="form-control" asp-for="Mail" id="mailAdress">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="personCount">Kişi Sayısı</label>
+                                <input type="number" class="form-control" asp-for="PersonCount" id="personCount">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Date">Rezervasyon Tarih</label>
+                                <input type="date" class="form-control" asp-for="Date" id="Date">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Description">Açıklama</label>
+                                <input type="text" class="form-control" asp-for="Description" id="Description">
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-primary">Rezervazyon Oluştur</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
