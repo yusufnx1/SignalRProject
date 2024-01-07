@@ -12,5 +12,6 @@ namespace SignalRProject.Businnes.Abstrack
         int TTotalOrderCount();
         int TActiveOrderCount();
         decimal TLastOrderPrice();
+        decimal TTodayTotalPrice();
     }
 }

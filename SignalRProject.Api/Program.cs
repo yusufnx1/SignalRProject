@@ -47,7 +47,6 @@ builder.Services.AddScoped<IContactUsDal, EfContactUsRepository>();
 builder.Services.AddScoped<IDiscountService, DiscountManager>();
 builder.Services.AddScoped<IDiscountDal, EfDiscountRepository>();
 
-
 builder.Services.AddScoped<IProductService, ProducManager>();
 builder.Services.AddScoped<IProductDal, EfProductRepository>();
 
@@ -63,6 +62,24 @@ builder.Services.AddScoped<IOrderDal, EfOrderRepository>();
 builder.Services.AddScoped<IOrderDetailService, OrderDetailManager>();
 builder.Services.AddScoped<IOrderDetailDal, EfOrderDetailsRepostiry>();
 
+
+builder.Services.AddScoped<IMoneyCaseService, MoneyCaseManager>();
+builder.Services.AddScoped<IMoneyCaseDal, EfMoneyCaseRepository>();
+
+builder.Services.AddScoped<IMenuTableService, MenuTableManager>();
+builder.Services.AddScoped<IMenuTableDal, EfMenuTableRepository>();
+
+builder.Services.AddScoped<ISliderService, SliderManager>();
+builder.Services.AddScoped<ISliderDal, EfSliderRepository>();
+
+builder.Services.AddScoped<IBasketService, BasketManager>();
+builder.Services.AddScoped<IBasketDal, EfBasketRepository>();
+
+builder.Services.AddScoped<INotificationService, NotificationManager>();
+builder.Services.AddScoped<INotificationDal, EfNotificationRepository>();
+
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(opt => opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddControllersWithViews()
     .AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
