@@ -10,5 +10,6 @@
         public string? OpenDays { get; set; }
         public string? OpenDaysDescription { get; set; }
         public string? OpenHours { get; set; }
+        public string? FooterTitle { get; set; }
     }
 }

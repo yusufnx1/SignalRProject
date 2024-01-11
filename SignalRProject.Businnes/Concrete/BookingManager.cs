@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SignalRProject.Businnes.Concrete
 {
-    public class BookingManager : IBookingService
+	public class BookingManager : IBookingService
     {
         private readonly IBookingDal _bookingDal;
 
@@ -18,12 +18,22 @@ namespace SignalRProject.Businnes.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void TAdd(Booking entity)
+		public void BookingStatusApproverd(int id)
+		{
+			_bookingDal.BookingStatusApproverd(id);
+		}
+
+		public void BookingStatusCancelled(int id)
+		{
+			_bookingDal.BookingStatusCancelled(id);
+		}
+
+		public void TAdd(Booking entity)
         {
             _bookingDal.Add(entity);
         }
 
-        public void TDelete(Booking entity)
+		public void TDelete(Booking entity)
         {
             _bookingDal.Delete(entity);
         }

@@ -1,4 +1,5 @@
-﻿<section class="book_section layout_padding">
+﻿@model CreateMessageDto
+<section class="book_section layout_padding">
     <div class="container">
         <div class="heading_container">
             <h2>
@@ -8,21 +9,21 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form_container">
-                    <form method="post" >
+                    <form method="post" asp-action="SendMessage" asp-controller="Default" >
                         <div>
-                            <input type="text" class="form-control" placeholder="Adınız Soyadınız"  />
+                            <input type="text" class="form-control" asp-for="NameSurname" placeholder="Adınız Soyadınız"  />
                         </div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Telefon Numaranız" />
+                            <input type="text" class="form-control" asp-for="Phone" placeholder="Telefon Numaranız" />
                         </div>
                         <div>
-                            <input type="email" class="form-control" placeholder="Email Adresiniz"  />
+                            <input type="email" class="form-control" asp-for="Mail" placeholder="Email Adresiniz"  />
                         </div>
                         <div>
-                            <input type="text" class="form-control" placeholder="Konu"  />
+                            <input type="text" class="form-control" asp-for="Subject" placeholder="Konu"  />
                         </div>
                         <div>
-                            <textarea  rows="10" placeholder="Buraya mesajınızı yazabilirsiniz..." class="form-control"></textarea>
+                            <textarea  rows="10" placeholder="Buraya mesajınızı yazabilirsiniz..." asp-for="MessageContent" class="form-control"></textarea>
                         </div>
 
                         <div class="btn_box">

@@ -54,7 +54,7 @@ namespace SignalRProject.Api.Controllers
                 ImageUrl = createProductDto.ImageUrl,
                 Price = createProductDto.Price,
                 ProductName = createProductDto.ProductName,
-                CategoryId = createProductDto.CategoryId
+                Status = true,
             });
             return Ok("Ürün Bilgisi Eklendi");
         }

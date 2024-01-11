@@ -30,7 +30,7 @@ namespace SignalRProject.Businnes.Concrete
 
         public Slider TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _sliderDal.GetById(id);
         }
 
         public List<Slider> TGetListAll()
@@ -40,7 +40,7 @@ namespace SignalRProject.Businnes.Concrete
 
         public void TUpdate(Slider entity)
         {
-            throw new NotImplementedException();
+            _sliderDal.Update(entity);
         }
     }
 }

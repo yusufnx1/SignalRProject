@@ -35,6 +35,9 @@ namespace SignalRProject.Api.Controllers
                 Location = createContactDto.Location,
                 Mail = createContactDto.Mail,
                 Phone = createContactDto.Phone,
+                OpenDays = createContactDto.OpenDays,
+                OpenDaysDescription = createContactDto.OpenDaysDescription,
+                OpenHours = createContactDto.OpenHours,
             });
             return Ok("İletişim Bilgisi Eklendi");
         }
@@ -60,6 +63,10 @@ namespace SignalRProject.Api.Controllers
                 Location = updateContactDto.Location,
                 Mail = updateContactDto.Mail,
                 Phone = updateContactDto.Phone,
+                OpenHours = updateContactDto.OpenHours,
+                OpenDaysDescription = updateContactDto.OpenDaysDescription,
+                OpenDays = updateContactDto.OpenDays,
+                FooterDesricpiton = updateContactDto.FooterDesricpiton
             });
             return Ok("İletişim Bilgisi Güncellendi");
         }

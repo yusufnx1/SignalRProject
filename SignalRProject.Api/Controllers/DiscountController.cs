@@ -34,6 +34,7 @@ namespace SignalRProject.Api.Controllers
                 Description = createDiscountDto.Description,
                 ImageUrl = createDiscountDto.ImageUrl,
                 Title = createDiscountDto.Title,
+                Status = false
             });
             return Ok("İndirim Bilgisi Eklendi");
         }
@@ -60,8 +61,21 @@ namespace SignalRProject.Api.Controllers
                 ImageUrl = updateDiscountDto.ImageUrl,
                 Title = updateDiscountDto.Title,
                 DiscountId = updateDiscountDto.DiscountId,
+                Status = false
             });
             return Ok("İndirim Bilgisi Güncellendi");
+        }
+        [HttpGet("ChangeStatusTrue/{id}")]
+        public IActionResult ChangeStatusTrue(int id)
+        {
+            _discountService.TChangeStatusTrue(id);
+            return Ok("Durum Bilgisi Aktif Hale Getirildi");
+        }
+        [HttpGet("ChangeStatusFalse/{id}")]
+        public IActionResult ChangeStatusFalse(int id)
+        {
+            _discountService.TChangeStatusFalse(id);
+            return Ok("Durum Bilgisi Pasif Hale Getirildi");
         }
     }
 }

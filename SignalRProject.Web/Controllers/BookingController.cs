@@ -27,17 +27,14 @@ namespace SignalRProject.Web.Controllers
             return View();
         }
         [HttpGet]
-        public async Task<IActionResult> CreateBooking()
+        public IActionResult CreateBooking()
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5242/api/Booking");
-            var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<ResultBookingDto>>(jsonData);
-            return View(values);
-        }
+			return View();
+		}
         [HttpPost]
         public async Task<IActionResult> CreateBooking(CreateBookingDto createBookingDto)
         {
+            createBookingDto.Description = "Rezervasyon Alındı";
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -84,5 +81,17 @@ namespace SignalRProject.Web.Controllers
             }
             return View();
         }
-    }
+        public async Task<IActionResult> BookingStatusApproved(int id)
+        {
+			var client = _httpClientFactory.CreateClient();
+			var responseMessage = await client.GetAsync($"http://localhost:5242/api/Booking/BookingStatusApproved/{id}");
+            return RedirectToAction("Index");
+		}
+		public async Task<IActionResult> BookingStatusCancelled(int id)
+		{
+			var client = _httpClientFactory.CreateClient();
+			var responseMessage = await client.GetAsync($"http://localhost:5242/api/Booking/BookingStatusCancelled/{id}");
+			return RedirectToAction("Index");
+		}
+	}
 }

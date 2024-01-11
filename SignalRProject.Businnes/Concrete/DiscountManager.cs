@@ -18,6 +18,16 @@ namespace SignalRProject.Businnes.Concrete
             _discountDal.Add(entity);
         }
 
+        public void TChangeStatusFalse(int id)
+        {
+            _discountDal.ChangeStatusFalse(id);
+        }
+
+        public void TChangeStatusTrue(int id)
+        {
+            _discountDal.ChangeStatusTrue(id);
+        }
+
         public void TDelete(Discount entity)
         {
             _discountDal.Delete(entity);
